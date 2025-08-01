@@ -1,0 +1,34 @@
+.logo-container {
+  transition: transform 0.3s ease;
+}
+
+.logo-container.hidden {
+  transform: translateY(-100%);
+}
+
+
+.logo-link {
+  display: inline-block;
+}
+
+.logo-img {
+  margin-top: 80px;
+  height: 200px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .logo-img {
+    margin-top: 40px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-img {
+    margin-top: 20px;
+    height: 100px;
+  }
+}
