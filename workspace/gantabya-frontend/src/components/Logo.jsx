@@ -10,13 +10,11 @@ function Logo() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
-        setHidden(true); // scrolling down
-      } else {
-        setHidden(false); // scrolling up
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setHidden(true);
+      } else if (currentScrollY < lastScrollY.current || currentScrollY <= 50) {
+        setHidden(false);
       }
-
       lastScrollY.current = currentScrollY;
     };
 
@@ -27,7 +25,12 @@ function Logo() {
   return (
     <div className={`logo-container ${hidden ? "hidden" : ""}`}>
       <Link to="/" className="logo-link">
-        <img src={logo} alt="TravelNepal Logo" className="logo-img" />
+        <img 
+          src={logo} 
+          alt="TravelNepal Logo" 
+          className="logo-img"
+          style={{ maxWidth: 'min(100%, 300px)' }}
+        />
       </Link>
     </div>
   );

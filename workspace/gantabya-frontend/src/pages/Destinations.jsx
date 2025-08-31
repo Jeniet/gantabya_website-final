@@ -1,46 +1,67 @@
-import React, { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
-import pokhara from '../assets/pokhara.jpg';
-import mustang from '../assets/mustang.jpg';
-import jugal from '../assets/jugal.jpg';
-import bungee from '../assets/bungee.jpg';
-import paragliding from '../assets/paragliding.jpg';
-import rafting from '../assets/rafting.jpg';
-import './Destinations.css';
+import React, { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import "./Destinations.css";
 
 const trekkingDestinations = [
   {
-    name: 'Pokhara',
-    image: pokhara,
-    desc: 'A lakeside paradise known for its stunning views of the Annapurna range, adventure sports, and peaceful vibes.',
+    name: "Jugal Base Camp",
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // Himalaya landscape Unsplash
+    desc: "Sindhupalchok",
   },
   {
-    name: 'Mustang',
-    image: mustang,
-    desc: 'A hidden kingdom offering desert landscapes, ancient caves, and rich Tibetan culture high in the Himalayas.',
+    name: "Numur Himal trek",
+    image:
+      "https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg?auto=compress&w=800", // Mountain view Pexels
+    desc: "Ramachhape",
   },
   {
-    name: 'Jugal Base Camp',
-    image: jugal,
-    desc: 'The trek to the Jugal Himal base camp leads close to Langshisa-Ri surrounded by staggering snow peaks.',
+    name: "Panchpokhari trek",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/7/7e/Panch_Pokhari_Sindhupalchowk.jpg", // Wikimedia Commons Panch Pokhari
+    desc: "Sindhupalchok",
+  },
+  {
+    name: "Vairab kunda Trek",
+    image:
+      "https://images.pexels.com/photos/6146270/pexels-photo-6146270.jpeg?auto=compress&w=800", // Mountain lake Pexels
+    desc: "Sindhupalchok",
+  },
+  {
+    name: "Taho-rolpa lake Trek",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tsho_Rolpa_Lake.jpg", // Wikimedia Commons Tsho Rolpa
+    desc: "Dolakha Rolwaling valley",
+  },
+  {
+    name: "Deudhanga Trek",
+    image:
+      "https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?auto=compress&w=800", // Himalaya sunrise Pexels
+    desc: "Bigu  Dolakha",
+  },
+  {
+    name: "Ama Yangri and Sermathang trek",
+    image:
+      "https://images.unsplash.com/photo-1464013778555-8e723c2f01f8?auto=format&fit=crop&w=800&q=80", // Himalaya landscape Unsplash
+    desc: "Sindhupalchok  melamchi",
   },
 ];
 
 const adventureDestinations = [
   {
-    name: 'Bungee Jumping Bhote Koshi',
-    image: bungee,
-    desc: 'One of the world’s most thrilling bungee jumps over a fast-flowing river.',
+    name: "",
+    image: "",
+    desc: "",
   },
   {
-    name: 'Paragliding in Pokhara',
-    image: paragliding,
-    desc: 'Soar above the lakeside city with epic views of the Himalayas.',
+    name: "",
+    image: "",
+    desc: "",
   },
   {
-    name: 'White Water Rafting',
-    image: rafting,
-    desc: 'Conquer Nepal’s wild rivers with high adrenaline and wet fun.',
+    name: "",
+    image: "",
+    desc: "",
   },
 ];
 
@@ -50,15 +71,20 @@ const Destinations = () => {
   const adventureRef = useRef(null);
 
   useEffect(() => {
-    if (location.state?.scrollTo === 'trekking') {
-      trekkingRef.current?.scrollIntoView({ behavior: 'smooth' });
-    } else if (location.state?.scrollTo === 'adventure') {
-      adventureRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (location.state?.scrollTo === "trekking") {
+      trekkingRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else if (location.state?.scrollTo === "adventure") {
+      adventureRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   }, [location.state]);
 
   return (
     <div className="destination-page">
+      {/* Floating decorative elements */}
+      <div className="floating-element floating-1"></div>
+      <div className="floating-element floating-2"></div>
+      <div className="floating-element floating-3"></div>
+
       <h2>Explore Destinations</h2>
 
       <div className="destination-section" ref={trekkingRef} id="trekking">
